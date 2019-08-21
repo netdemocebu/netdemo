@@ -1,0 +1,10 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/NetDemo/bin
+/NetDemo/obj/Debug
+/packages
+/NetDemoWebApi/bin
+/.vs/NetDemo
+/NetDemoWebApi/obj/Debug
