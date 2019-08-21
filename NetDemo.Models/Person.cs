@@ -14,6 +14,12 @@ namespace NetDemo.Models
 
         public string LastName { get; set; }
 
+        public string EmailAddress { get; set; }
+
+        public int Age { get; set; }
+
+        public string SecurityToken { get; set; }
+
         public virtual ICollection<Training> Training { get; set; }
     }
 }
