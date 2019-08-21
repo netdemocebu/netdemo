@@ -1,11 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio Version 16
-VisualStudioVersion = 16.0.29001.49
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo", "NetDemo\NetDemo.csproj", "{5FB008DD-CD86-46AE-A2D2-F0C41394383A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemoWebApi", "NetDemoWebApi\NetDemoWebApi.csproj", "{72F6CC83-924A-4086-8FDE-7866E571A41F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Repositories", "NetDemo.Repositories\NetDemo.Repositories.csproj", "{22144C20-D3BF-4D02-8A58-8A7EBE820D69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Interfaces", "NetDemo.Interfaces\NetDemo.Interfaces.csproj", "{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Models", "NetDemo.Models\NetDemo.Models.csproj", "{F59690FC-EA80-4D88-A268-695A149E1DD1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.WebApi", "NetDemo.WebApi\NetDemo.WebApi.csproj", "{101F3783-D9E9-46F5-B23C-A3773C867BF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Services", "NetDemo.Services\NetDemo.Services.csproj", "{810FF89F-4C68-408B-9714-19E601824CFF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +25,26 @@ Global
 		{5FB008DD-CD86-46AE-A2D2-F0C41394383A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5FB008DD-CD86-46AE-A2D2-F0C41394383A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5FB008DD-CD86-46AE-A2D2-F0C41394383A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{72F6CC83-924A-4086-8FDE-7866E571A41F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{72F6CC83-924A-4086-8FDE-7866E571A41F}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{72F6CC83-924A-4086-8FDE-7866E571A41F}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{72F6CC83-924A-4086-8FDE-7866E571A41F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22144C20-D3BF-4D02-8A58-8A7EBE820D69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22144C20-D3BF-4D02-8A58-8A7EBE820D69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22144C20-D3BF-4D02-8A58-8A7EBE820D69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22144C20-D3BF-4D02-8A58-8A7EBE820D69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F59690FC-EA80-4D88-A268-695A149E1DD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F59690FC-EA80-4D88-A268-695A149E1DD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F59690FC-EA80-4D88-A268-695A149E1DD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F59690FC-EA80-4D88-A268-695A149E1DD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{101F3783-D9E9-46F5-B23C-A3773C867BF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{101F3783-D9E9-46F5-B23C-A3773C867BF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{101F3783-D9E9-46F5-B23C-A3773C867BF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{101F3783-D9E9-46F5-B23C-A3773C867BF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{810FF89F-4C68-408B-9714-19E601824CFF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{810FF89F-4C68-408B-9714-19E601824CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{810FF89F-4C68-408B-9714-19E601824CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{810FF89F-4C68-408B-9714-19E601824CFF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

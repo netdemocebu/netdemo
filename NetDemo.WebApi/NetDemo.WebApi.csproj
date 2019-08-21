@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <AspNetCoreHostingModel>InProcess</AspNetCoreHostingModel>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NetDemo.Interfaces\NetDemo.Interfaces.csproj" />
+    <ProjectReference Include="..\NetDemo.Models\NetDemo.Models.csproj" />
+    <ProjectReference Include="..\NetDemo.Repositories\NetDemo.Repositories.csproj" />
+    <ProjectReference Include="..\NetDemo.Services\NetDemo.Services.csproj" />
+  </ItemGroup>
+
+</Project>

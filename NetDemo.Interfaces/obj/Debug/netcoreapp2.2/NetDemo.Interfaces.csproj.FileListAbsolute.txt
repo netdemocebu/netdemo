@@ -1,0 +1,12 @@
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.deps.json
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.dll
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.pdb
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.Models.dll
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.Models.pdb
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.csprojAssemblyReference.cache
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.csproj.CoreCompileInputs.cache
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.AssemblyInfoInputs.cache
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.AssemblyInfo.cs
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.csproj.CopyComplete
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.dll
+D:\Projects\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.pdb

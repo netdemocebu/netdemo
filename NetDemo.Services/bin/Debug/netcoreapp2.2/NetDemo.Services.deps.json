@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v2.2",
+    "signature": "da39a3ee5e6b4b0d3255bfef95601890afd80709"
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v2.2": {
+      "NetDemo.Services/1.0.0": {
+        "dependencies": {
+          "NetDemo.Interfaces": "1.0.0",
+          "NetDemo.Models": "1.0.0"
+        },
+        "runtime": {
+          "NetDemo.Services.dll": {}
+        }
+      },
+      "NetDemo.Interfaces/1.0.0": {
+        "dependencies": {
+          "NetDemo.Models": "1.0.0"
+        },
+        "runtime": {
+          "NetDemo.Interfaces.dll": {}
+        }
+      },
+      "NetDemo.Models/1.0.0": {
+        "runtime": {
+          "NetDemo.Models.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "NetDemo.Services/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetDemo.Interfaces/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetDemo.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
