@@ -12,3 +12,17 @@ D:\Projects\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Models.
 D:\Projects\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.csproj.CopyComplete
 D:\Projects\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.dll
 D:\Projects\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.pdb
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Repositories.deps.json
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Repositories.dll
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Repositories.pdb
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.dll
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Models.dll
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.pdb
+D:\training2\netdemo\NetDemo.Repositories\bin\Debug\netcoreapp2.2\NetDemo.Models.pdb
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.csprojAssemblyReference.cache
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.csproj.CoreCompileInputs.cache
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.AssemblyInfoInputs.cache
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.AssemblyInfo.cs
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.csproj.CopyComplete
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.dll
+D:\training2\netdemo\NetDemo.Repositories\obj\Debug\netcoreapp2.2\NetDemo.Repositories.pdb

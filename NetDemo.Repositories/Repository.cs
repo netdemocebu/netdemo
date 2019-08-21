@@ -4,14 +4,15 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using NetDemo.Models;
 
 namespace NetDemo.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly MyDbContext _context;
+        protected readonly demoContext _context;
 
-        public Repository(MyDbContext context)
+        public Repository(demoContext context)
         {
             _context = context;
         }

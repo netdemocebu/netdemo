@@ -6,30 +6,30 @@ using NetDemo.Models;
 
 namespace NetDemo.Services
 {
-    public class PersonalInfoService : IPersonalInfoService
+    public class PersonService : IPersonService
     {
         #region Members
 
-        private readonly IPersonalInfoRepository _personalInfoRepository;
+        private readonly IPersonRepository _PersonRepository;
 
         #endregion Members
 
         #region Constructor
 
-        public PersonalInfoService(IPersonalInfoRepository personalInfoRepository)
+        public PersonService(IPersonRepository PersonRepository)
         {
-            _personalInfoRepository = personalInfoRepository;
+            _PersonRepository = PersonRepository;
         }
 
         #endregion Constructor
 
         #region Events
 
-        public async Task<IEnumerable<PersonalInfo>> GetAllAsync()
+        public async Task<IEnumerable<Person>> GetAllAsync()
         {
             try
             {
-                var model = await _personalInfoRepository.GetAllAsync();
+                var model = await _PersonRepository.GetAllAsync();
 
                 return model;
             }
@@ -39,11 +39,11 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task<PersonalInfo> GetAsync(int id)
+        public async Task<Person> GetAsync(int id)
         {
             try
             {
-                var model = await _personalInfoRepository.GetByIdAsync(id);
+                var model = await _PersonRepository.GetByIdAsync(id);
 
                 return model;
             }
@@ -53,11 +53,11 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task SaveAsync(PersonalInfo info)
+        public async Task SaveAsync(Person info)
         {
             try
             {
-                await _personalInfoRepository.CreateAsync(info);
+                await _PersonRepository.CreateAsync(info);
             }
             catch (Exception ex)
             {
@@ -65,16 +65,16 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task UpdateAsync(PersonalInfo info)
+        public async Task UpdateAsync(Person info)
         {
             try
             {
-                var model = await _personalInfoRepository.GetByIdAsync(info.PersonalId);
+                var model = await _PersonRepository.GetByIdAsync(info.Id);
 
                 model.LastName = info.LastName;
                 model.FirstName = info.FirstName;
 
-                await _personalInfoRepository.UpdateAsync(model);
+                await _PersonRepository.UpdateAsync(model);
             }
             catch (Exception ex)
             {
@@ -86,9 +86,9 @@ namespace NetDemo.Services
         {
             try
             {
-                var model = await _personalInfoRepository.GetByIdAsync(id);
+                var model = await _PersonRepository.GetByIdAsync(id);
 
-                await _personalInfoRepository.DeleteAsync(model);
+                await _PersonRepository.DeleteAsync(model);
             }
             catch (Exception ex)
             {

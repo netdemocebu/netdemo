@@ -3,8 +3,8 @@ using System.Collections.Generic;
 
 namespace NetDemo.Interfaces.Contract
 {
-    public interface ITrainingInfoRepository : IRepository<TrainingInfo>
+    public interface ITrainingRepository : IRepository<Training>
     {
-        //IEnumerable<TrainingInfo> GetAllActive();
+        //IEnumerable<Training> GetAllActive();
     }
 }

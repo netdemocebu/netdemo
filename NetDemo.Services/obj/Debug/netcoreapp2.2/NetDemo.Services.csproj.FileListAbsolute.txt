@@ -11,3 +11,17 @@ D:\Projects\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.As
 D:\Projects\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.csproj.CopyComplete
 D:\Projects\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.dll
 D:\Projects\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.pdb
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Services.deps.json
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Services.dll
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Services.pdb
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.dll
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Models.dll
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Interfaces.pdb
+D:\training2\netdemo\NetDemo.Services\bin\Debug\netcoreapp2.2\NetDemo.Models.pdb
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.csprojAssemblyReference.cache
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.csproj.CoreCompileInputs.cache
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.AssemblyInfoInputs.cache
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.AssemblyInfo.cs
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.csproj.CopyComplete
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.dll
+D:\training2\netdemo\NetDemo.Services\obj\Debug\netcoreapp2.2\NetDemo.Services.pdb

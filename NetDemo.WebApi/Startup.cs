@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetDemo.Interfaces.Contract;
+using NetDemo.Models;
 using NetDemo.Repositories;
 using NetDemo.Services;
 
@@ -22,15 +23,15 @@ namespace NetDemo.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddDbContext<MyDbContext>(options =>
+            services.AddDbContext<demoContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"))
             );
 
-            services.AddScoped<IPersonalInfoRepository, PersonalInfoRepository>();
-            services.AddScoped<ITrainingInfoRepository, TrainingInfoRepository>();
+            services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<ITrainingRepository, TrainingRepository>();
 
-            services.AddScoped<IPersonalInfoService, PersonalInfoService>();
-            services.AddScoped<ITrainingInfoService, TrainingInfoService>();
+            services.AddScoped<IPersonService, PersonService>();
+            services.AddScoped<ITrainingService, TrainingService>();
 
             services.AddCors();
 

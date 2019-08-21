@@ -5,16 +5,16 @@ using NetDemo.Models;
 
 namespace NetDemo.Repositories
 {
-    public class TrainingInfoRepository : Repository<TrainingInfo>, ITrainingInfoRepository
+    public class TrainingRepository : Repository<Training>, ITrainingRepository
     {
-        public TrainingInfoRepository(MyDbContext context) : base(context)
+        public TrainingRepository(demoContext context) : base(context)
         {
 
         }
 
-        //public IEnumerable<TrainingInfo> GetAllActive()
+        //public IEnumerable<Training> GetAllActive()
         //{
-        //    return _context.TrainingInfo.Where(a => a.IsActive == true).ToList().OrderBy(a => a.Name);
+        //    return _context.Training.Where(a => a.IsActive == true).ToList().OrderBy(a => a.Name);
         //}
     }
 }

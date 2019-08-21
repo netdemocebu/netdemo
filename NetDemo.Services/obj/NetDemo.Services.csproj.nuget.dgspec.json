@@ -1,0 +1,183 @@
+{
+  "format": 1,
+  "restore": {
+    "D:\\training2\\netdemo\\NetDemo.Services\\NetDemo.Services.csproj": {}
+  },
+  "projects": {
+    "D:\\training2\\netdemo\\NetDemo.Interfaces\\NetDemo.Interfaces.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\training2\\netdemo\\NetDemo.Interfaces\\NetDemo.Interfaces.csproj",
+        "projectName": "NetDemo.Interfaces",
+        "projectPath": "D:\\training2\\netdemo\\NetDemo.Interfaces\\NetDemo.Interfaces.csproj",
+        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
+        "outputPath": "D:\\training2\\netdemo\\NetDemo.Interfaces\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj": {
+                "projectPath": "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj",
+        "projectName": "NetDemo.Models",
+        "projectPath": "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj",
+        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
+        "outputPath": "D:\\training2\\netdemo\\NetDemo.Models\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore.Design": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.EntityFrameworkCore.SqlServer": {
+              "target": "Package",
+              "version": "[2.2.0, )"
+            },
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    },
+    "D:\\training2\\netdemo\\NetDemo.Services\\NetDemo.Services.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "D:\\training2\\netdemo\\NetDemo.Services\\NetDemo.Services.csproj",
+        "projectName": "NetDemo.Services",
+        "projectPath": "D:\\training2\\netdemo\\NetDemo.Services\\NetDemo.Services.csproj",
+        "packagesPath": "C:\\Users\\user2\\.nuget\\packages\\",
+        "outputPath": "D:\\training2\\netdemo\\NetDemo.Services\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\user2\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "netcoreapp2.2"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "netcoreapp2.2": {
+            "projectReferences": {
+              "D:\\training2\\netdemo\\NetDemo.Interfaces\\NetDemo.Interfaces.csproj": {
+                "projectPath": "D:\\training2\\netdemo\\NetDemo.Interfaces\\NetDemo.Interfaces.csproj"
+              },
+              "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj": {
+                "projectPath": "D:\\training2\\netdemo\\NetDemo.Models\\NetDemo.Models.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "netcoreapp2.2": {
+          "dependencies": {
+            "Microsoft.NETCore.App": {
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[2.2.0, )",
+              "autoReferenced": true
+            }
+          },
+          "imports": [
+            "net461"
+          ],
+          "assetTargetFallback": true,
+          "warn": true
+        }
+      }
+    }
+  }
+}

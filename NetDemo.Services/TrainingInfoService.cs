@@ -6,28 +6,28 @@ using System.Threading.Tasks;
 
 namespace NetDemo.Services
 {
-    public class TrainingInfoService : ITrainingInfoService
+    public class TrainingService : ITrainingService
     {
         #region Members
 
-        private readonly ITrainingInfoRepository _trainingInfoRepository;
+        private readonly ITrainingRepository _TrainingRepository;
 
         #endregion Members
 
         #region Constructor
 
-        public TrainingInfoService(ITrainingInfoRepository trainingInfoRepository)
+        public TrainingService(ITrainingRepository TrainingRepository)
         {
-            _trainingInfoRepository = trainingInfoRepository;
+            _TrainingRepository = TrainingRepository;
         }
 
         #endregion Members
 
-        public async Task<IEnumerable<TrainingInfo>> GetAllAsync()
+        public async Task<IEnumerable<Training>> GetAllAsync()
         {
             try
             {
-                var model = await _trainingInfoRepository.GetAllAsync();
+                var model = await _TrainingRepository.GetAllAsync();
 
                 return model;
             }
@@ -37,11 +37,11 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task<TrainingInfo> GetAsync(int id)
+        public async Task<Training> GetAsync(int id)
         {
             try
             {
-                var model = await _trainingInfoRepository.GetByIdAsync(id);
+                var model = await _TrainingRepository.GetByIdAsync(id);
 
                 return model;
             }
@@ -51,11 +51,11 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task SaveAsync(TrainingInfo info)
+        public async Task SaveAsync(Training info)
         {
             try
             {
-                await _trainingInfoRepository.CreateAsync(info);
+                await _TrainingRepository.CreateAsync(info);
             }
             catch (Exception ex)
             {
@@ -63,15 +63,15 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task UpdateAsync(TrainingInfo info)
+        public async Task UpdateAsync(Training info)
         {
             try
             {
-                var model = await _trainingInfoRepository.GetByIdAsync(info.TrainingId);
-                model.PersonalId = info.PersonalId;
-                model.TrainingDate = info.TrainingDate;
+                var model = await _TrainingRepository.GetByIdAsync(info.Id);
+                model.Id = info.Id;
+                
 
-                await _trainingInfoRepository.UpdateAsync(model);
+                await _TrainingRepository.UpdateAsync(model);
             }
             catch (Exception ex)
             {
@@ -83,9 +83,9 @@ namespace NetDemo.Services
         {
             try
             {
-                var model = await _trainingInfoRepository.GetByIdAsync(id);
+                var model = await _TrainingRepository.GetByIdAsync(id);
 
-                await _trainingInfoRepository.DeleteAsync(model);
+                await _TrainingRepository.DeleteAsync(model);
             }
             catch (Exception ex)
             {

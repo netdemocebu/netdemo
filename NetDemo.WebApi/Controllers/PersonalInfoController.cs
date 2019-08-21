@@ -8,34 +8,34 @@ namespace NetDemoWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class PersonalInfoController : ControllerBase
+    public class PersonController : ControllerBase
     {
         #region Members
 
-        private readonly IPersonalInfoService _personalInfoService;
+        private readonly IPersonService _PersonService;
 
         #endregion Members
 
         #region Constructor
 
-        public PersonalInfoController(IPersonalInfoService personalInfoService)
+        public PersonController(IPersonService PersonService)
         {
-            _personalInfoService = personalInfoService;
+            _PersonService = PersonService;
         }
 
         #endregion Constructor
 
         #region CRUD
 
-        // POST api/personalinfo/create
+        // POST api/Person/create
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] PersonalInfo personalInfo)
+        public async Task<IActionResult> Create([FromBody] Person Person)
         {
             try
             {
-                await _personalInfoService.SaveAsync(personalInfo);
+                await _PersonService.SaveAsync(Person);
 
                 return Ok();
             }
@@ -45,16 +45,16 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // GET api/personalinfo/getall
+        // GET api/Person/getall
         [Produces("application/json")]
         [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
         {
             try
             {
-                var personalInfo = _personalInfoService.GetAllAsync();
+                var Person = _PersonService.GetAllAsync();
 
-                return Ok(personalInfo);
+                return Ok(Person);
             }
             catch (Exception ex)
             {
@@ -62,16 +62,16 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // GET api/personalinfo/get/{id}
+        // GET api/Person/get/{id}
         [Produces("application/json")]
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
         {
             try
             {
-                var personalInfo = await _personalInfoService.GetAsync(id);
+                var Person = await _PersonService.GetAsync(id);
 
-                return Ok(personalInfo);
+                return Ok(Person);
             }
             catch (Exception ex)
             {
@@ -79,15 +79,15 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // PUT api/personalinfo/update
+        // PUT api/Person/update
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] PersonalInfo personalInfo)
+        public async Task<IActionResult> Update([FromBody] Person Person)
         {
             try
             {
-                await _personalInfoService.UpdateAsync(personalInfo);
+                await _PersonService.UpdateAsync(Person);
 
                 return Ok();
             }
@@ -97,13 +97,13 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // DELETE api/personalinfo/delete/{id}
+        // DELETE api/Person/delete/{id}
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
             try
             {
-                await _personalInfoService.DeleteAsync(id);
+                await _PersonService.DeleteAsync(id);
 
                 return Ok();
             }

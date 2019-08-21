@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
+using NetDemo.Models;
 using System.Threading.Tasks;
 
 namespace NetDemo.Repositories
@@ -8,7 +9,7 @@ namespace NetDemo.Repositories
     {
         public static async Task Seed(IApplicationBuilder applicationBuilder)
         {
-            MyDbContext context = applicationBuilder.ApplicationServices.GetRequiredService<MyDbContext>();
+            demoContext context = applicationBuilder.ApplicationServices.GetRequiredService<demoContext>();
 
             context.SaveChanges();
         }

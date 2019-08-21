@@ -8,19 +8,19 @@ namespace NetDemoWebApi.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class TrainingInfoController : ControllerBase
+    public class TrainingController : ControllerBase
     {
         #region Members
 
-        private readonly ITrainingInfoService _trainingInfoService;
+        private readonly ITrainingService _TrainingService;
 
         #endregion Members
 
         #region Constructor
 
-        public TrainingInfoController(ITrainingInfoService trainingInfoService)
+        public TrainingController(ITrainingService TrainingService)
         {
-            _trainingInfoService = trainingInfoService;
+            _TrainingService = TrainingService;
         }
 
         #endregion Constructor
@@ -31,11 +31,11 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] TrainingInfo trainingInfo)
+        public async Task<IActionResult> Create([FromBody] Training Training)
         {
             try
             {
-                await _trainingInfoService.SaveAsync(trainingInfo);
+                await _TrainingService.SaveAsync(Training);
 
                 return Ok();
             }
@@ -52,9 +52,9 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var trainingInfo = _trainingInfoService.GetAllAsync();
+                var Training = _TrainingService.GetAllAsync();
 
-                return Ok(trainingInfo);
+                return Ok(Training);
             }
             catch (Exception ex)
             {
@@ -69,9 +69,9 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var trainingInfo = await _trainingInfoService.GetAsync(id);
+                var Training = await _TrainingService.GetAsync(id);
 
-                return Ok(trainingInfo);
+                return Ok(Training);
             }
             catch (Exception ex)
             {
@@ -83,11 +83,11 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] TrainingInfo trainingInfo)
+        public async Task<IActionResult> Update([FromBody] Training Training)
         {
             try
             {
-                await _trainingInfoService.UpdateAsync(trainingInfo);
+                await _TrainingService.UpdateAsync(Training);
 
                 return Ok();
             }
@@ -103,7 +103,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                await _trainingInfoService.DeleteAsync(id);
+                await _TrainingService.DeleteAsync(id);
 
                 return Ok();
             }

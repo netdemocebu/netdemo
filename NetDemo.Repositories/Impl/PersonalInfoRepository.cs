@@ -5,16 +5,16 @@ using NetDemo.Interfaces.Contract;
 
 namespace NetDemo.Repositories
 {
-    public class PersonalInfoRepository : Repository<PersonalInfo>, IPersonalInfoRepository
+    public class PersonRepository : Repository<Person>, IPersonRepository
     {
-        public PersonalInfoRepository(MyDbContext context) : base(context)
+        public PersonRepository(demoContext context) : base(context)
         {
 
         }
 
-        //public IEnumerable<PersonalInfo> GetAllActive()
+        //public IEnumerable<Person> GetAllActive()
         //{
-        //    return _context.PersonalInfo.Where(a => a.IsActive == true).ToList().OrderBy(a => a.Name);
+        //    return _context.Person.Where(a => a.IsActive == true).ToList().OrderBy(a => a.Name);
         //}
     }
 }

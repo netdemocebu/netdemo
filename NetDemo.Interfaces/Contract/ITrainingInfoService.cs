@@ -4,12 +4,12 @@ using System.Threading.Tasks;
 
 namespace NetDemo.Interfaces.Contract
 {
-    public interface ITrainingInfoService
+    public interface ITrainingService
     {
-        Task<IEnumerable<TrainingInfo>> GetAllAsync();
-        Task<TrainingInfo> GetAsync(int id);
-        Task SaveAsync(TrainingInfo info);
-        Task UpdateAsync(TrainingInfo info);
+        Task<IEnumerable<Training>> GetAllAsync();
+        Task<Training> GetAsync(int id);
+        Task SaveAsync(Training info);
+        Task UpdateAsync(Training info);
         Task DeleteAsync(int id);
     }
 }
