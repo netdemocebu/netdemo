@@ -18,3 +18,5 @@ x64/
 /packages/*
 /Demo.mdf
 /Demo_Log.ldf
+*.cache
+
