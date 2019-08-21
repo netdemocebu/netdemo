@@ -5,15 +5,17 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo", "NetDemo\NetDemo.csproj", "{5FB008DD-CD86-46AE-A2D2-F0C41394383A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Repositories", "NetDemo.Repositories\NetDemo.Repositories.csproj", "{22144C20-D3BF-4D02-8A58-8A7EBE820D69}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.Repositories", "NetDemo.Repositories\NetDemo.Repositories.csproj", "{22144C20-D3BF-4D02-8A58-8A7EBE820D69}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Interfaces", "NetDemo.Interfaces\NetDemo.Interfaces.csproj", "{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.Interfaces", "NetDemo.Interfaces\NetDemo.Interfaces.csproj", "{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Models", "NetDemo.Models\NetDemo.Models.csproj", "{F59690FC-EA80-4D88-A268-695A149E1DD1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.Models", "NetDemo.Models\NetDemo.Models.csproj", "{F59690FC-EA80-4D88-A268-695A149E1DD1}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.WebApi", "NetDemo.WebApi\NetDemo.WebApi.csproj", "{101F3783-D9E9-46F5-B23C-A3773C867BF5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.WebApi", "NetDemo.WebApi\NetDemo.WebApi.csproj", "{101F3783-D9E9-46F5-B23C-A3773C867BF5}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.Services", "NetDemo.Services\NetDemo.Services.csproj", "{810FF89F-4C68-408B-9714-19E601824CFF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.Services", "NetDemo.Services\NetDemo.Services.csproj", "{810FF89F-4C68-408B-9714-19E601824CFF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemo.ViewModels", "NetDemo.ViewModels\NetDemo.ViewModels.csproj", "{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{810FF89F-4C68-408B-9714-19E601824CFF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{810FF89F-4C68-408B-9714-19E601824CFF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{810FF89F-4C68-408B-9714-19E601824CFF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

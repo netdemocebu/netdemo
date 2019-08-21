@@ -1,4 +1,5 @@
 ﻿using NetDemo.Models;
+using NetDemo.ViewModels;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -6,10 +7,10 @@ namespace NetDemo.Interfaces.Contract
 {
     public interface IPersonService
     {
-        Task<IEnumerable<Person>> GetAllAsync();
+        Task<IEnumerable<PersonViewModel>> GetAllAsync();
         Task<Person> GetAsync(int id);
-        Task SaveAsync(Person info);
-        Task UpdateAsync(Person info);
+        Task SaveAsync(PersonViewModel info);
+        Task UpdateAsync(PersonViewModel info);
         Task DeleteAsync(int id);
     }
 }

@@ -22,3 +22,5 @@ D:\training2\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfac
 D:\training2\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.csproj.CopyComplete
 D:\training2\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.dll
 D:\training2\netdemo\NetDemo.Interfaces\obj\Debug\netcoreapp2.2\NetDemo.Interfaces.pdb
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.ViewModels.dll
+D:\Projects\netdemo\NetDemo.Interfaces\bin\Debug\netcoreapp2.2\NetDemo.ViewModels.pdb

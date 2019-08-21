@@ -1,15 +1,16 @@
 ﻿using NetDemo.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using NetDemo.ViewModels;
 
 namespace NetDemo.Interfaces.Contract
 {
     public interface ITrainingService
     {
-        Task<IEnumerable<Training>> GetAllAsync();
+        Task<IEnumerable<TrainingViewModel>> GetAllAsync();
         Task<Training> GetAsync(int id);
-        Task SaveAsync(Training info);
-        Task UpdateAsync(Training info);
+        Task SaveAsync(TrainingViewModel info);
+        Task UpdateAsync(TrainingViewModel info);
         Task DeleteAsync(int id);
     }
 }

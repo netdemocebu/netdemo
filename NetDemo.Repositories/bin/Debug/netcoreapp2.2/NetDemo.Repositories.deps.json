@@ -549,7 +549,8 @@
       },
       "NetDemo.Interfaces/1.0.0": {
         "dependencies": {
-          "NetDemo.Models": "1.0.0"
+          "NetDemo.Models": "1.0.0",
+          "NetDemo.ViewModels": "1.0.0"
         },
         "runtime": {
           "NetDemo.Interfaces.dll": {}
@@ -562,6 +563,11 @@
         },
         "runtime": {
           "NetDemo.Models.dll": {}
+        }
+      },
+      "NetDemo.ViewModels/1.0.0": {
+        "runtime": {
+          "NetDemo.ViewModels.dll": {}
         }
       }
     }
@@ -984,6 +990,11 @@
       "sha512": ""
     },
     "NetDemo.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NetDemo.ViewModels/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

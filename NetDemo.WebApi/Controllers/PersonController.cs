@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetDemo.Interfaces.Contract;
-using NetDemo.Models;
 using System;
 using System.Threading.Tasks;
+using NetDemo.ViewModels;
 
 namespace NetDemoWebApi.Controllers
 {
@@ -12,15 +12,15 @@ namespace NetDemoWebApi.Controllers
     {
         #region Members
 
-        private readonly IPersonService _PersonService;
+        private readonly IPersonService _personService;
 
         #endregion Members
 
         #region Constructor
 
-        public PersonController(IPersonService PersonService)
+        public PersonController(IPersonService personService)
         {
-            _PersonService = PersonService;
+            _personService = personService;
         }
 
         #endregion Constructor
@@ -31,11 +31,12 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] Person Person)
+        public async Task<IActionResult> Create([FromBody] PersonViewModel person)
         {
             try
             {
-                await _PersonService.SaveAsync(Person);
+
+                await _personService.SaveAsync(person);
 
                 return Ok();
             }
@@ -52,9 +53,9 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Person = _PersonService.GetAllAsync();
+                var persons = _personService.GetAllAsync();
 
-                return Ok(Person);
+                return Ok(persons);
             }
             catch (Exception ex)
             {
@@ -69,7 +70,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Person = await _PersonService.GetAsync(id);
+                var Person = await _personService.GetAsync(id);
 
                 return Ok(Person);
             }
@@ -83,11 +84,11 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] Person Person)
+        public async Task<IActionResult> Update([FromBody] PersonViewModel person)
         {
             try
             {
-                await _PersonService.UpdateAsync(Person);
+                await _personService.UpdateAsync(person);
 
                 return Ok();
             }
@@ -103,7 +104,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                await _PersonService.DeleteAsync(id);
+                await _personService.DeleteAsync(id);
 
                 return Ok();
             }

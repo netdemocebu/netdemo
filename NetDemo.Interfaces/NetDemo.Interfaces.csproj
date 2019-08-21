@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NetDemo.Models\NetDemo.Models.csproj" />
+    <ProjectReference Include="..\NetDemo.ViewModels\NetDemo.ViewModels.csproj" />
   </ItemGroup>
 
 </Project>

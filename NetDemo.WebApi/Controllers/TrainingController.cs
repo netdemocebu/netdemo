@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using NetDemo.Interfaces.Contract;
-using NetDemo.Models;
 using System;
 using System.Threading.Tasks;
+using NetDemo.ViewModels;
 
 namespace NetDemoWebApi.Controllers
 {
@@ -12,15 +12,15 @@ namespace NetDemoWebApi.Controllers
     {
         #region Members
 
-        private readonly ITrainingService _TrainingService;
+        private readonly ITrainingService _trainingService;
 
         #endregion Members
 
         #region Constructor
 
-        public TrainingController(ITrainingService TrainingService)
+        public TrainingController(ITrainingService trainingService)
         {
-            _TrainingService = TrainingService;
+            _trainingService = trainingService;
         }
 
         #endregion Constructor
@@ -31,11 +31,11 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] Training Training)
+        public async Task<IActionResult> Create([FromBody] TrainingViewModel training)
         {
             try
             {
-                await _TrainingService.SaveAsync(Training);
+                await _trainingService.SaveAsync(training);
 
                 return Ok();
             }
@@ -52,7 +52,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Training = _TrainingService.GetAllAsync();
+                var Training = _trainingService.GetAllAsync();
 
                 return Ok(Training);
             }
@@ -69,7 +69,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Training = await _TrainingService.GetAsync(id);
+                var Training = await _trainingService.GetAsync(id);
 
                 return Ok(Training);
             }
@@ -83,11 +83,11 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] Training Training)
+        public async Task<IActionResult> Update([FromBody] TrainingViewModel training)
         {
             try
             {
-                await _TrainingService.UpdateAsync(Training);
+                await _trainingService.UpdateAsync(training);
 
                 return Ok();
             }
@@ -103,7 +103,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                await _TrainingService.DeleteAsync(id);
+                await _trainingService.DeleteAsync(id);
 
                 return Ok();
             }

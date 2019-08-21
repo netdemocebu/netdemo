@@ -1,0 +1,8 @@
+D:\Projects\netdemo\NetDemo.ViewModels\bin\Debug\netcoreapp2.2\NetDemo.ViewModels.deps.json
+D:\Projects\netdemo\NetDemo.ViewModels\bin\Debug\netcoreapp2.2\NetDemo.ViewModels.dll
+D:\Projects\netdemo\NetDemo.ViewModels\bin\Debug\netcoreapp2.2\NetDemo.ViewModels.pdb
+D:\Projects\netdemo\NetDemo.ViewModels\obj\Debug\netcoreapp2.2\NetDemo.ViewModels.csproj.CoreCompileInputs.cache
+D:\Projects\netdemo\NetDemo.ViewModels\obj\Debug\netcoreapp2.2\NetDemo.ViewModels.AssemblyInfoInputs.cache
+D:\Projects\netdemo\NetDemo.ViewModels\obj\Debug\netcoreapp2.2\NetDemo.ViewModels.AssemblyInfo.cs
+D:\Projects\netdemo\NetDemo.ViewModels\obj\Debug\netcoreapp2.2\NetDemo.ViewModels.dll
+D:\Projects\netdemo\NetDemo.ViewModels\obj\Debug\netcoreapp2.2\NetDemo.ViewModels.pdb

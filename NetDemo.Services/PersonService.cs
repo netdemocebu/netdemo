@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using NetDemo.Interfaces.Contract;
 using NetDemo.Models;
+using NetDemo.ViewModels;
 
 namespace NetDemo.Services
 {
@@ -10,28 +11,38 @@ namespace NetDemo.Services
     {
         #region Members
 
-        private readonly IPersonRepository _PersonRepository;
+        private readonly IPersonRepository _personRepository;
 
         #endregion Members
 
         #region Constructor
 
-        public PersonService(IPersonRepository PersonRepository)
+        public PersonService(IPersonRepository personRepository)
         {
-            _PersonRepository = PersonRepository;
+            _personRepository = personRepository;
         }
 
         #endregion Constructor
 
         #region Events
 
-        public async Task<IEnumerable<Person>> GetAllAsync()
+        public async Task<IEnumerable<PersonViewModel>> GetAllAsync()
         {
             try
             {
-                var model = await _PersonRepository.GetAllAsync();
+                var persons = await _personRepository.GetAllAsync();
+                var personsViewModel = new List<PersonViewModel>();
 
-                return model;
+                foreach (var person in persons)
+                {
+                    personsViewModel.Add(new PersonViewModel
+                    {
+                        LastName = person.LastName,
+                        FirstName = person.FirstName
+                    });
+                }
+
+                return personsViewModel;
             }
             catch (Exception ex)
             {
@@ -43,7 +54,7 @@ namespace NetDemo.Services
         {
             try
             {
-                var model = await _PersonRepository.GetByIdAsync(id);
+                var model = await _personRepository.GetByIdAsync(id);
 
                 return model;
             }
@@ -53,11 +64,17 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task SaveAsync(Person info)
+        public async Task SaveAsync(PersonViewModel info)
         {
             try
             {
-                await _PersonRepository.CreateAsync(info);
+                var person = new Person()
+                {
+                    LastName = info.LastName,
+                    FirstName = info.FirstName
+                };
+
+                await _personRepository.CreateAsync(person);
             }
             catch (Exception ex)
             {
@@ -65,16 +82,16 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task UpdateAsync(Person info)
+        public async Task UpdateAsync(PersonViewModel info)
         {
             try
             {
-                var model = await _PersonRepository.GetByIdAsync(info.Id);
+                var model = await _personRepository.GetByIdAsync(info.Id);
 
                 model.LastName = info.LastName;
                 model.FirstName = info.FirstName;
 
-                await _PersonRepository.UpdateAsync(model);
+                await _personRepository.UpdateAsync(model);
             }
             catch (Exception ex)
             {
@@ -86,9 +103,9 @@ namespace NetDemo.Services
         {
             try
             {
-                var model = await _PersonRepository.GetByIdAsync(id);
+                var model = await _personRepository.GetByIdAsync(id);
 
-                await _PersonRepository.DeleteAsync(model);
+                await _personRepository.DeleteAsync(model);
             }
             catch (Exception ex)
             {

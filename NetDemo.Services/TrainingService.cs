@@ -3,6 +3,7 @@ using NetDemo.Models;
 using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using NetDemo.ViewModels;
 
 namespace NetDemo.Services
 {
@@ -10,26 +11,38 @@ namespace NetDemo.Services
     {
         #region Members
 
-        private readonly ITrainingRepository _TrainingRepository;
+        private readonly ITrainingRepository _trainingRepository;
+        private readonly IPersonRepository _personRepository;
 
         #endregion Members
 
         #region Constructor
 
-        public TrainingService(ITrainingRepository TrainingRepository)
+        public TrainingService(ITrainingRepository trainingRepository, IPersonRepository personRepository)
         {
-            _TrainingRepository = TrainingRepository;
+            _trainingRepository = trainingRepository;
+            _personRepository = personRepository;
         }
 
         #endregion Members
 
-        public async Task<IEnumerable<Training>> GetAllAsync()
+        public async Task<IEnumerable<TrainingViewModel>> GetAllAsync()
         {
             try
             {
-                var model = await _TrainingRepository.GetAllAsync();
+                var trainings = await _trainingRepository.GetAllAsync();
+                var trainingsViewModel = new List<TrainingViewModel>();
 
-                return model;
+                foreach (var training in trainings)
+                {
+                    trainingsViewModel.Add(new TrainingViewModel
+                    {
+                        Name = training.Name,
+                        PersonId = training.PersonId
+                    });
+                }
+
+                return trainingsViewModel;
             }
             catch (Exception ex)
             {
@@ -41,7 +54,7 @@ namespace NetDemo.Services
         {
             try
             {
-                var model = await _TrainingRepository.GetByIdAsync(id);
+                var model = await _trainingRepository.GetByIdAsync(id);
 
                 return model;
             }
@@ -51,11 +64,17 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task SaveAsync(Training info)
+        public async Task SaveAsync(TrainingViewModel info)
         {
             try
             {
-                await _TrainingRepository.CreateAsync(info);
+                var training = new Training()
+                {
+                    Name = info.Name,
+                    PersonId = info.PersonId
+                };
+
+                await _trainingRepository.CreateAsync(training);
             }
             catch (Exception ex)
             {
@@ -63,15 +82,15 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task UpdateAsync(Training info)
+        public async Task UpdateAsync(TrainingViewModel info)
         {
             try
             {
-                var model = await _TrainingRepository.GetByIdAsync(info.Id);
-                model.Id = info.Id;
-                
+                var model = await _trainingRepository.GetByIdAsync(info.Id);
+                model.Name = info.Name;
+                model.PersonId = info.PersonId;
 
-                await _TrainingRepository.UpdateAsync(model);
+                await _trainingRepository.UpdateAsync(model);
             }
             catch (Exception ex)
             {
@@ -83,9 +102,9 @@ namespace NetDemo.Services
         {
             try
             {
-                var model = await _TrainingRepository.GetByIdAsync(id);
+                var model = await _trainingRepository.GetByIdAsync(id);
 
-                await _TrainingRepository.DeleteAsync(model);
+                await _trainingRepository.DeleteAsync(model);
             }
             catch (Exception ex)
             {
