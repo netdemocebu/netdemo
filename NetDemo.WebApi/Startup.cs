@@ -8,6 +8,7 @@ using NetDemo.Interfaces.Contract;
 using NetDemo.Models;
 using NetDemo.Repositories;
 using NetDemo.Services;
+using Swashbuckle.AspNetCore.Swagger;
 
 namespace NetDemo.WebApi
 {
@@ -34,6 +35,10 @@ namespace NetDemo.WebApi
             services.AddScoped<ITrainingService, TrainingService>();
 
             services.AddCors();
+            services.AddSwaggerGen(c =>
+            {
+                c.SwaggerDoc("v1", new Info { Title = "Values Api", Version = "v1" });
+            });
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
         }
@@ -56,6 +61,11 @@ namespace NetDemo.WebApi
             app.UseMvcWithDefaultRoute();
             app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseSwagger();
+            app.UseSwaggerUI(c =>
+            {
+                c.SwaggerEndpoint("/swagger/v1/swagger.json", "Values Api V1");
+            });
         }
     }
 }
