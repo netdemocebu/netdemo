@@ -71,7 +71,7 @@ namespace NetDemo.Services
                 model.PersonalId = info.PersonalId;
                 model.TrainingDate = info.TrainingDate;
 
-                await _trainingInfoRepository.CreateAsync(model);
+                await _trainingInfoRepository.UpdateAsync(model);
             }
             catch (Exception ex)
             {
