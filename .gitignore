@@ -8,3 +8,9 @@
 /NetDemoWebApi/bin
 /.vs/NetDemo
 /NetDemoWebApi/obj/Debug
+/NetDemo.Interfaces/obj/Release/netcoreapp2.2
+/NetDemo.Models/obj/Release/netcoreapp2.2
+/NetDemo.Repositories/obj/Release/netcoreapp2.2
+/NetDemo.WebApi/obj/Release/netcoreapp2.2
+/NetDemo.Services/obj/Debug/netcoreapp2.2
+/NetDemo.Services/obj/Release/netcoreapp2.2
