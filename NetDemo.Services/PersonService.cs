@@ -37,6 +37,7 @@ namespace NetDemo.Services
                 {
                     personsViewModel.Add(new PersonViewModel
                     {
+                        Id = person.Id,
                         LastName = person.LastName,
                         FirstName = person.FirstName
                     });
@@ -50,13 +51,19 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task<Person> GetAsync(int id)
+        public async Task<PersonViewModel> GetAsync(int id)
         {
             try
             {
                 var model = await _personRepository.GetByIdAsync(id);
+                var viewModel = new PersonViewModel()
+                {
+                    Id = model.Id,
+                    LastName = model.LastName,
+                    FirstName = model.FirstName
+                };
 
-                return model;
+                return viewModel;
             }
             catch (Exception ex)
             {
