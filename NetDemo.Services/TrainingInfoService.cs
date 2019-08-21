@@ -67,7 +67,11 @@ namespace NetDemo.Services
         {
             try
             {
-                await _trainingInfoRepository.CreateAsync(info);
+                var model = await _trainingInfoRepository.GetByIdAsync(info.TrainingId);
+                model.PersonalId = info.PersonalId;
+                model.TrainingDate = info.TrainingDate;
+
+                await _trainingInfoRepository.CreateAsync(model);
             }
             catch (Exception ex)
             {
