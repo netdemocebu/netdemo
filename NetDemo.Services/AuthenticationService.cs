@@ -7,16 +7,17 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using NetDemo.Models;
+using NetDemo.ViewModels;
 
 namespace NetDemo.Services
 {
     public class AuthenticationService
     {
-        private readonly IPersonalInfoRepository _personalInfoRepository;
+        private readonly IPersonRepository _personRepository;
 
-        public AuthenticationService(IPersonalInfoRepository personalInfoRepository)
+        public AuthenticationService(IPersonRepository personRepository)
         {
-            _personalInfoRepository = personalInfoRepository;
+            _personRepository = personRepository;
         }
 
         public string CreateToken(string email, string password, int id)
@@ -37,8 +38,7 @@ namespace NetDemo.Services
 
         public string GetToken(string email, string password)
         {
-            var listP = _personalInfoRepository.GetAll();
-            var token = listP.Where(x => x.LastName.Equals(email)).Select(s => s.LastName).FirstOrDefault();
+            var token = _personRepository.GetAll().Where(x => x.LastName.Equals(email)).Select(s => s.LastName).FirstOrDefault();
 
             return token;
         }
@@ -71,11 +71,11 @@ namespace NetDemo.Services
         {
             try
             {
-                PersonalInfo pInfo = new PersonalInfo();
+                Person pInfo = new Person();
 
-                pInfo = _personalInfoRepository.GetById(id);
+                pInfo = _personRepository.GetById(id);
                 pInfo.LastName = text;
-                _personalInfoRepository.Update(pInfo);
+                _personRepository.Update(pInfo);
             }
             catch (Exception ex)
             {
