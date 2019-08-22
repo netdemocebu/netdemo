@@ -83,6 +83,9 @@ namespace NetDemo.Services
         {
             try
             {
+                var svc = new AuthenticationService(_personRepository);
+                var token = svc.CreateToken(info.EmailAddress);
+
                 var person = new Person()
                 {
                     LastName = info.LastName,
@@ -90,7 +93,8 @@ namespace NetDemo.Services
                     Address = info.Address,
                     EmailAddress = info.EmailAddress,
                     Age = info.Age,
-                    IsActive = true
+                    IsActive = true,
+                    SecurityToken = token
                 };
 
                 await _personRepository.CreateAsync(person);

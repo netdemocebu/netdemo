@@ -44,12 +44,13 @@ namespace NetDemo.Controllers
             return new HttpStatusCodeResult(410, "demo 410");
         }
 
-        public ActionResult Verification(string token, string email)
+        public ActionResult Verification(string token)
         {
             
-            var svc = new AuthenticationService(_personRepo);
-            var dbToken = svc.GetToken(email);
-            if(dbToken.Equals(token))
+            var svc = new AuthenticationService(_personRepo);            
+            var dbToken = svc.GetToken(token);
+            
+            if(string.IsNullOrEmpty(dbToken))
             {
                 //registration success
                 return View();
