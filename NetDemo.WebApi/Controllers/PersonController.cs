@@ -31,11 +31,10 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] PersonViewModel person)
+        public async Task<IActionResult> Create([FromBody] PersonCreateViewModel person)
         {
             try
             {
-
                 await _personService.SaveAsync(person);
 
                 return Ok();
@@ -53,7 +52,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var persons = _personService.GetAllAsync();
+                var persons = _personService.GetAllAsync().Result;
 
                 return Ok(persons);
             }
@@ -84,7 +83,7 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] PersonViewModel person)
+        public async Task<IActionResult> Update([FromBody] PersonUpdateViewModel person)
         {
             try
             {

@@ -31,7 +31,7 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
-        public async Task<IActionResult> Create([FromBody] TrainingViewModel training)
+        public async Task<IActionResult> Create([FromBody] TrainingCreateViewModel training)
         {
             try
             {
@@ -52,7 +52,7 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var training = _trainingService.GetAllAsync();
+                var training = _trainingService.GetAllAsync().Result;
 
                 return Ok(training);
             }
@@ -69,9 +69,9 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Training = await _trainingService.GetAsync(id);
+                var training = await _trainingService.GetAsync(id);
 
-                return Ok(Training);
+                return Ok(training);
             }
             catch (Exception ex)
             {
@@ -83,7 +83,7 @@ namespace NetDemoWebApi.Controllers
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
-        public async Task<IActionResult> Update([FromBody] TrainingViewModel training)
+        public async Task<IActionResult> Update([FromBody] TrainingUpdateViewModel training)
         {
             try
             {

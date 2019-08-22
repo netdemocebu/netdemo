@@ -9,7 +9,7 @@ namespace NetDemo.Repositories
     {
         public static async Task Seed(IApplicationBuilder applicationBuilder)
         {
-            demoContext context = applicationBuilder.ApplicationServices.GetRequiredService<demoContext>();
+            DemoContext context = applicationBuilder.ApplicationServices.GetRequiredService<DemoContext>();
 
             context.SaveChanges();
         }

@@ -39,7 +39,10 @@ namespace NetDemo.Services
                     {
                         Id = training.Id,
                         Name = training.Name,
-                        PersonId = training.PersonId
+                        PersonId = training.PersonId,
+                        Description = training.Description,
+                        Location = training.Location,
+                        IsActive = true
                     });
                 }
 
@@ -60,7 +63,10 @@ namespace NetDemo.Services
                 {
                     Id = model.Id,
                     Name = model.Name,
-                    PersonId = model.PersonId
+                    PersonId = model.PersonId,
+                    Description = model.Description,
+                    Location = model.Location,
+                    IsActive = true
                 };
 
                 return viewModel;
@@ -71,14 +77,17 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task SaveAsync(TrainingViewModel info)
+        public async Task SaveAsync(TrainingCreateViewModel info)
         {
             try
             {
                 var training = new Training()
                 {
                     Name = info.Name,
-                    PersonId = info.PersonId
+                    PersonId = info.PersonId,
+                    Description = info.Description,
+                    Location = info.Location,
+                    IsActive = true
                 };
 
                 await _trainingRepository.CreateAsync(training);
@@ -89,13 +98,16 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task UpdateAsync(TrainingViewModel info)
+        public async Task UpdateAsync(TrainingUpdateViewModel info)
         {
             try
             {
                 var model = await _trainingRepository.GetByIdAsync(info.Id);
                 model.Name = info.Name;
                 model.PersonId = info.PersonId;
+                model.Description = info.Description;
+                model.Location = info.Location;
+                model.IsActive = info.IsActive;
 
                 await _trainingRepository.UpdateAsync(model);
             }

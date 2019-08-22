@@ -8,11 +8,14 @@ namespace NetDemo.Models
         {
             Training = new HashSet<Training>();
         }
-
+  
         public int Id { get; set; }
+
         public string FirstName { get; set; }
 
         public string LastName { get; set; }
+
+        public string Address { get; set; }
 
         public string EmailAddress { get; set; }
 
@@ -21,5 +24,7 @@ namespace NetDemo.Models
         public string SecurityToken { get; set; }
 
         public virtual ICollection<Training> Training { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

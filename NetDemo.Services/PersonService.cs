@@ -39,7 +39,11 @@ namespace NetDemo.Services
                     {
                         Id = person.Id,
                         LastName = person.LastName,
-                        FirstName = person.FirstName
+                        FirstName = person.FirstName,
+                        Address = person.Address,
+                        EmailAddress = person.EmailAddress,
+                        Age = person.Age,
+                        IsActive = person.IsActive
                     });
                 }
 
@@ -60,7 +64,11 @@ namespace NetDemo.Services
                 {
                     Id = model.Id,
                     LastName = model.LastName,
-                    FirstName = model.FirstName
+                    FirstName = model.FirstName,
+                    Address = model.Address,
+                    EmailAddress = model.EmailAddress,
+                    Age = model.Age,
+                    IsActive = model.IsActive
                 };
 
                 return viewModel;
@@ -71,14 +79,18 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task SaveAsync(PersonViewModel info)
+        public async Task SaveAsync(PersonCreateViewModel info)
         {
             try
             {
                 var person = new Person()
                 {
                     LastName = info.LastName,
-                    FirstName = info.FirstName
+                    FirstName = info.FirstName,
+                    Address = info.Address,
+                    EmailAddress = info.EmailAddress,
+                    Age = info.Age,
+                    IsActive = true
                 };
 
                 await _personRepository.CreateAsync(person);
@@ -89,7 +101,7 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task UpdateAsync(PersonViewModel info)
+        public async Task UpdateAsync(PersonUpdateViewModel info)
         {
             try
             {
@@ -97,6 +109,10 @@ namespace NetDemo.Services
 
                 model.LastName = info.LastName;
                 model.FirstName = info.FirstName;
+                model.Address = info.Address;
+                model.EmailAddress = info.EmailAddress;
+                model.Age = info.Age;
+                model.IsActive = info.IsActive;
 
                 await _personRepository.UpdateAsync(model);
             }

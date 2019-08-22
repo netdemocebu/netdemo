@@ -7,7 +7,7 @@ namespace NetDemo.Repositories
 {
     public class TrainingRepository : Repository<Training>, ITrainingRepository
     {
-        public TrainingRepository(demoContext context) : base(context)
+        public TrainingRepository(DemoContext context) : base(context)
         {
 
         }

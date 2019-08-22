@@ -9,9 +9,9 @@ using NetDemo.Models;
 
 namespace NetDemo.Models.Migrations
 {
-    [DbContext(typeof(demoContext))]
-    [Migration("20190821151951_AdditionalProp")]
-    partial class AdditionalProp
+    [DbContext(typeof(DemoContext))]
+    [Migration("20190822093228_Initial")]
+    partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -23,14 +23,28 @@ namespace NetDemo.Models.Migrations
 
             modelBuilder.Entity("NetDemo.Models.Person", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Address")
+                        .HasMaxLength(250);
+
+                    b.Property<int>("Age");
+
+                    b.Property<string>("EmailAddress")
+                        .HasMaxLength(100);
 
                     b.Property<string>("FirstName")
                         .HasMaxLength(100)
                         .IsUnicode(false);
 
+                    b.Property<bool>("IsActive");
+
                     b.Property<string>("LastName")
                         .HasMaxLength(100);
+
+                    b.Property<string>("SecurityToken");
 
                     b.HasKey("Id");
 
@@ -39,10 +53,20 @@ namespace NetDemo.Models.Migrations
 
             modelBuilder.Entity("NetDemo.Models.Training", b =>
                 {
-                    b.Property<int>("Id");
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Description")
+                        .HasMaxLength(250);
+
+                    b.Property<bool>("IsActive");
+
+                    b.Property<string>("Location")
+                        .HasMaxLength(250);
 
                     b.Property<string>("Name")
-                        .HasMaxLength(100);
+                        .HasMaxLength(250);
 
                     b.Property<int?>("PersonId");
 

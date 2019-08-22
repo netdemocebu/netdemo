@@ -10,9 +10,9 @@ namespace NetDemo.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly demoContext _context;
+        protected readonly DemoContext _context;
 
-        public Repository(demoContext context)
+        public Repository(DemoContext context)
         {
             _context = context;
         }

@@ -8,8 +8,8 @@ namespace NetDemo.Interfaces.Contract
     {
         Task<IEnumerable<PersonViewModel>> GetAllAsync();
         Task<PersonViewModel> GetAsync(int id);
-        Task SaveAsync(PersonViewModel info);
-        Task UpdateAsync(PersonViewModel info);
+        Task SaveAsync(PersonCreateViewModel info);
+        Task UpdateAsync(PersonUpdateViewModel info);
         Task DeleteAsync(int id);
     }
 }
