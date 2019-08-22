@@ -14,3 +14,5 @@
 /NetDemo.WebApi/obj/Release/netcoreapp2.2
 /NetDemo.Services/obj/Debug/netcoreapp2.2
 /NetDemo.Services/obj/Release/netcoreapp2.2
+/NetDemo.Interfaces
+/NetDemo.ViewModels/obj/Debug/netcoreapp2.2
