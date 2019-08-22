@@ -70,9 +70,9 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Person = await _personService.GetAsync(id);
+                var person = await _personService.GetAsync(id);
 
-                return Ok(Person);
+                return Ok(person);
             }
             catch (Exception ex)
             {

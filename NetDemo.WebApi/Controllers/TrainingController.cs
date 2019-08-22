@@ -52,9 +52,9 @@ namespace NetDemoWebApi.Controllers
         {
             try
             {
-                var Training = _trainingService.GetAllAsync();
+                var training = _trainingService.GetAllAsync();
 
-                return Ok(Training);
+                return Ok(training);
             }
             catch (Exception ex)
             {

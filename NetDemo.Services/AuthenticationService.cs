@@ -2,12 +2,9 @@
 using NetDemo.Interfaces.Contract;
 using System.Net.Mail;
 using System.Security.Cryptography;
-using System.Threading.Tasks;
 using System.Text;
-using System.Collections.Generic;
 using System.Linq;
 using NetDemo.Models;
-using NetDemo.ViewModels;
 
 namespace NetDemo.Services
 {

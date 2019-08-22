@@ -37,6 +37,7 @@ namespace NetDemo.Services
                 {
                     trainingsViewModel.Add(new TrainingViewModel
                     {
+                        Id = training.Id,
                         Name = training.Name,
                         PersonId = training.PersonId
                     });
@@ -50,13 +51,19 @@ namespace NetDemo.Services
             }
         }
 
-        public async Task<Training> GetAsync(int id)
+        public async Task<TrainingViewModel> GetAsync(int id)
         {
             try
             {
                 var model = await _trainingRepository.GetByIdAsync(id);
+                var viewModel = new TrainingViewModel()
+                {
+                    Id = model.Id,
+                    Name = model.Name,
+                    PersonId = model.PersonId
+                };
 
-                return model;
+                return viewModel;
             }
             catch (Exception ex)
             {
