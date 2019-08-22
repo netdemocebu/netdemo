@@ -33,7 +33,7 @@ namespace NetDemo.Services
             }
         }
 
-        public string GetToken(string email, string password)
+        public string GetToken(string email)
         {
             var token = _personRepository.GetAll().Where(x => x.EmailAddress.Equals(email)).Select(s => s.SecurityToken).FirstOrDefault();
 
@@ -49,8 +49,8 @@ namespace NetDemo.Services
 
                 mail.From = new MailAddress("testmailmailer3@gmail.com");
                 mail.To.Add(sender);
-                mail.Subject = "Test Mail";
-                mail.Body = encryptstr;
+                mail.Subject = "Verification Mail";
+                mail.Body = "<a href ='http://localhost:44394/Demo/Verification/" + encryptstr + "?email=" + sender + "> login </a>";
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("testmailmailer3@gmail.com", "@password123");
