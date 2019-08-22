@@ -260,6 +260,10 @@
       <Project>{FD66C4F9-DF6E-42FF-B865-CE65CF3FB94B}</Project>
       <Name>NetDemo.Interfaces</Name>
     </ProjectReference>
+    <ProjectReference Include="..\NetDemo.Models\NetDemo.Models.csproj">
+      <Project>{f59690fc-ea80-4d88-a268-695a149e1dd1}</Project>
+      <Name>NetDemo.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\NetDemo.Repositories\NetDemo.Repositories.csproj">
       <Project>{22144c20-d3bf-4d02-8a58-8a7ebe820d69}</Project>
       <Name>NetDemo.Repositories</Name>
