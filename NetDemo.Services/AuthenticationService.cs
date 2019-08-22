@@ -35,7 +35,7 @@ namespace NetDemo.Services
 
         public string GetToken(string email, string password)
         {
-            var token = _personRepository.GetAll().Where(x => x.LastName.Equals(email)).Select(s => s.LastName).FirstOrDefault();
+            var token = _personRepository.GetAll().Where(x => x.EmailAddress.Equals(email)).Select(s => s.SecurityToken).FirstOrDefault();
 
             return token;
         }
@@ -48,9 +48,9 @@ namespace NetDemo.Services
                 SmtpClient SmtpServer = new SmtpClient("smtp.gmail.com");
 
                 mail.From = new MailAddress("testmailmailer3@gmail.com");
-                mail.To.Add("to_address");
+                mail.To.Add(sender);
                 mail.Subject = "Test Mail";
-                mail.Body = "This is for testing SMTP mail from GMAIL";
+                mail.Body = encryptstr;
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("testmailmailer3@gmail.com", "@password123");
@@ -71,7 +71,7 @@ namespace NetDemo.Services
                 Person pInfo = new Person();
 
                 pInfo = _personRepository.GetById(id);
-                pInfo.LastName = text;
+                pInfo.SecurityToken = text;
                 _personRepository.Update(pInfo);
             }
             catch (Exception ex)
