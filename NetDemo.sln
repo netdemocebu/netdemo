@@ -17,10 +17,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.Services", "NetDemo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetDemo.ViewModels", "NetDemo.ViewModels\NetDemo.ViewModels.csproj", "{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Sample", "Sample\Sample.csproj", "{46ED3275-1818-4DC8-825B-CA44B14B34F8}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NetDemoCore", "NetDemoCore\NetDemoCore.csproj", "{5EC562BC-195F-414E-A564-78FC7843256E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,14 +51,6 @@ Global
 		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}.Release|Any CPU.Build.0 = Release|Any CPU
-		{46ED3275-1818-4DC8-825B-CA44B14B34F8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{46ED3275-1818-4DC8-825B-CA44B14B34F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{46ED3275-1818-4DC8-825B-CA44B14B34F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{46ED3275-1818-4DC8-825B-CA44B14B34F8}.Release|Any CPU.Build.0 = Release|Any CPU
-		{5EC562BC-195F-414E-A564-78FC7843256E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{5EC562BC-195F-414E-A564-78FC7843256E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{5EC562BC-195F-414E-A564-78FC7843256E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{5EC562BC-195F-414E-A564-78FC7843256E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

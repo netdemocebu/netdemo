@@ -50,7 +50,7 @@ namespace NetDemo.Services
                 mail.From = new MailAddress("testmailmailer3@gmail.com");
                 mail.To.Add(sender);
                 mail.Subject = "Verification Mail";
-                mail.Body = "<a href ='http://localhost:44394/Demo/Verification/?token=" + encryptstr + "> login </a>";
+                mail.Body = "<a href ='http://localhost:44394/api/person/verify/?token=" + encryptstr + "> login </a>";
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("testmailmailer3@gmail.com", "@password123");
