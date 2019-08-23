@@ -26,6 +26,8 @@ namespace NetDemo.Services
 
         #endregion Members
 
+        #region Events
+
         public async Task<IEnumerable<TrainingViewModel>> GetAllAsync()
         {
             try
@@ -129,5 +131,29 @@ namespace NetDemo.Services
             {
             }
         }
+
+        public IEnumerable<Training> GetAllActive()
+        {
+            return _trainingRepository.GetAllActive();
+        }
+
+        public IEnumerable<Training> GetAllInactive()
+        {
+            return _trainingRepository.GetAllInactive();
+        }
+
+        public IEnumerable<Training> GetAllWithPerson()
+        {
+            return _trainingRepository.GetAllWithPerson();
+        }
+
+        public void GetWithPersonsHasToken()
+        {
+            Func<Training, bool> myFilter = x => x.Person.SecurityToken != null;
+
+            var personsHasToken = _trainingRepository.FindWithPerson(myFilter);
+        }
+
+        #endregion Events
     }
 }
