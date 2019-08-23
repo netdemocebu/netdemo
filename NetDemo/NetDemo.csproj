@@ -200,6 +200,7 @@
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\PersonController.cs" />
     <Compile Include="Controllers\RegisterController.cs" />
+    <Compile Include="Controllers\TrainingController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -256,10 +257,13 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\Verification.cshtml" />
     <Content Include="Views\Person\Index.cshtml" />
+    <Content Include="Views\Training\Index.cshtml" />
+    <Content Include="Views\Training\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\TrainingEmpty\" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -282,6 +286,10 @@
     <ProjectReference Include="..\NetDemo.Services\NetDemo.Services.csproj">
       <Project>{810ff89f-4c68-408b-9714-19e601824cff}</Project>
       <Name>NetDemo.Services</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\NetDemo.ViewModels\NetDemo.ViewModels.csproj">
+      <Project>{8694DE00-58A0-4ED4-A757-E12F10D9DE7A}</Project>
+      <Name>NetDemo.ViewModels</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

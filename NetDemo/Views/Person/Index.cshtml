@@ -1,4 +1,4 @@
-﻿
+﻿@model  NetDemo.ViewModels.PersonViewModel
 @{
     ViewBag.Title = "Person";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -14,7 +14,7 @@
                 </div>
                 <div class="col-sm-6 col-md-8">
                     <h4>
-                        Bhaumik Patel
+                        @Model.FirstName
                     </h4>
                     <small>
                         <cite title="San Francisco, USA">
