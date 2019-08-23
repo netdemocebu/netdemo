@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Threading.Tasks;
+using NetDemo.Models;
 using NetDemo.ViewModels;
 
 namespace NetDemo.Interfaces.Contract
@@ -11,5 +12,9 @@ namespace NetDemo.Interfaces.Contract
         Task SaveAsync(TrainingCreateViewModel info);
         Task UpdateAsync(TrainingUpdateViewModel info);
         Task DeleteAsync(int id);
+        IEnumerable<Training> GetAllActive();
+        IEnumerable<Training> GetAllInactive();
+        IEnumerable<Training> GetAllWithPerson();
+        void GetWithPersonsHasToken();
     }
 }

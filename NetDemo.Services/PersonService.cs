@@ -139,6 +139,26 @@ namespace NetDemo.Services
             }
         }
 
+        public IEnumerable<Person> GetAllActive()
+        {
+            return _personRepository.GetAllActive();
+        }
+
+        public IEnumerable<Person> GetAllInactive()
+        {
+            return _personRepository.GetAllInactive();
+        }
+
+        public IEnumerable<Person> GetAllWithTrainings()
+        {
+            return _personRepository.GetAllWithTrainings();
+        }
+
+        public Person GetWithTrainings(int id)
+        {
+            return _personRepository.GetWithTrainings(id);
+        }
+
         #endregion Events
     }
 }

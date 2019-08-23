@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.ComponentModel;
 
 namespace NetDemo.Models
 {
@@ -11,6 +12,7 @@ namespace NetDemo.Models
   
         public int Id { get; set; }
 
+        [DisplayName("First Name")]
         public string FirstName { get; set; }
 
         public string LastName { get; set; }

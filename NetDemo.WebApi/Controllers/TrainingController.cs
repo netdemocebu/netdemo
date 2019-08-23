@@ -27,7 +27,7 @@ namespace NetDemoWebApi.Controllers
 
         #region CRUD
 
-        // POST api/traninginfo/create
+        // POST api/traning/create
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPost("create")]
@@ -45,7 +45,7 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // GET api/traninginfo/getall
+        // GET api/traning/getall
         [Produces("application/json")]
         [HttpGet("getall")]
         public async Task<IActionResult> GetAll()
@@ -62,7 +62,7 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // GET api/traninginfo/get/{id}
+        // GET api/traning/get/{id}
         [Produces("application/json")]
         [HttpGet("get/{id}")]
         public async Task<IActionResult> Get(int id)
@@ -79,7 +79,7 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // PUT api/traninginfo/update
+        // PUT api/traning/update
         [Produces("application/json")]
         [Consumes("application/json")]
         [HttpPut("update")]
@@ -97,7 +97,7 @@ namespace NetDemoWebApi.Controllers
             }
         }
 
-        // DELETE api/traninginfo/delete/{id}
+        // DELETE api/traning/delete/{id}
         [HttpDelete("delete/{id}")]
         public async Task<IActionResult> Delete(int id)
         {
