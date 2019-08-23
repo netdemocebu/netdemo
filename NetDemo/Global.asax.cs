@@ -12,6 +12,7 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 using NetDemo.Interfaces;
+using NetDemo.Services;
 
 namespace NetDemo
 {
@@ -37,6 +38,7 @@ namespace NetDemo
             builder.RegisterType<PersonRepository>().As<IPersonRepository>();
             builder.RegisterType<TrainingRepository>().As<ITrainingRepository>();
             builder.RegisterType<DemoContext>();
+            builder.RegisterType<PersonService>().As<IPersonService>();
 
             var container = builder.Build();
 
