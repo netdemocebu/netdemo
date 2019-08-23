@@ -3,6 +3,7 @@ using NetDemo.Interfaces.Contract;
 using System;
 using System.Threading.Tasks;
 using NetDemo.ViewModels;
+using NetDemo.Services;
 
 namespace NetDemoWebApi.Controllers
 {
@@ -13,14 +14,16 @@ namespace NetDemoWebApi.Controllers
         #region Members
 
         private readonly IPersonService _personService;
+        private readonly IPersonRepository _personRepository;
 
         #endregion Members
 
         #region Constructor
 
-        public PersonController(IPersonService personService)
+        public PersonController(IPersonService personService, IPersonRepository personRepository)
         {
             _personService = personService;
+            _personRepository = personRepository;
         }
 
         #endregion Constructor
@@ -114,5 +117,22 @@ namespace NetDemoWebApi.Controllers
         }
 
         #endregion CRUD
+        [Produces("application/json")]
+        [HttpDelete("verify/{token}")]
+        public async Task<IActionResult> Verification(string token)
+        {
+
+            var svc = new AuthenticationService(_personRepository);
+            var dbToken = svc.GetToken(token);
+
+            if (string.IsNullOrEmpty(dbToken))
+            {
+                //registration success
+                return Ok();
+            }
+
+            //registration failed
+            return BadRequest();
+        }
     }
 }
