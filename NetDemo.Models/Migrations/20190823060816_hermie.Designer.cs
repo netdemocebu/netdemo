@@ -10,8 +10,8 @@ using NetDemo.Models;
 namespace NetDemo.Models.Migrations
 {
     [DbContext(typeof(DemoContext))]
-    [Migration("20190822093228_Initial")]
-    partial class Initial
+    [Migration("20190823060816_hermie")]
+    partial class hermie
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

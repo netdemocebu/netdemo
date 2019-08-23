@@ -17,14 +17,14 @@ namespace NetDemo.Services
             _personRepository = personRepository;
         }
 
-        public string CreateToken(string email, string password, int id)
+        public string CreateToken(string email)
         {
             try
             {
-                var encryptString = Encrypt(email, password);
+                var encryptString = Encrypt(email, tokenKey);
 
                 SendMail(email, encryptString);
-                InsertHash(encryptString, id);
+
                 return encryptString;
             }
             catch (Exception ex)
@@ -33,11 +33,11 @@ namespace NetDemo.Services
             }
         }
 
-        public string GetToken(string email, string password)
+        public string GetToken(string token)
         {
-            var token = _personRepository.GetAll().Where(x => x.EmailAddress.Equals(email)).Select(s => s.SecurityToken).FirstOrDefault();
-
-            return token;
+            var securityToken = _personRepository.GetAll().Where(x => x.SecurityToken.Equals(token)).Select(s => s.SecurityToken).FirstOrDefault();
+            
+            return securityToken;
         }
 
         private void SendMail(string sender, string encryptstr)
@@ -49,8 +49,8 @@ namespace NetDemo.Services
 
                 mail.From = new MailAddress("testmailmailer3@gmail.com");
                 mail.To.Add(sender);
-                mail.Subject = "Test Mail";
-                mail.Body = encryptstr;
+                mail.Subject = "Verification Mail";
+                mail.Body = "<a href ='http://localhost:44394/api/person/verify/?token=" + encryptstr + "> login </a>";
 
                 SmtpServer.Port = 587;
                 SmtpServer.Credentials = new System.Net.NetworkCredential("testmailmailer3@gmail.com", "@password123");
@@ -64,26 +64,13 @@ namespace NetDemo.Services
                 
             }
         }
-        private void InsertHash(string text, int id)
-        {
-            try
-            {
-                Person pInfo = new Person();
 
-                pInfo = _personRepository.GetById(id);
-                pInfo.SecurityToken = text;
-                _personRepository.Update(pInfo);
-            }
-            catch (Exception ex)
-            {
-            }
-        }
-
-        private string Encrypt(string email, string password)
+        private string Encrypt(string email, string key)
         {
+            byte[] key2 = Encoding.ASCII.GetBytes(key);
             byte[] inputArray = Encoding.UTF8.GetBytes(email);
             TripleDESCryptoServiceProvider tripleDES = new TripleDESCryptoServiceProvider();
-            tripleDES.Key = UTF8Encoding.UTF8.GetBytes(password);
+            tripleDES.Key = key2;
             tripleDES.Mode = CipherMode.ECB;
             tripleDES.Padding = PaddingMode.PKCS7;
             ICryptoTransform cTransform = tripleDES.CreateEncryptor();
@@ -91,5 +78,7 @@ namespace NetDemo.Services
             tripleDES.Clear();
             return Convert.ToBase64String(resultArray, 0, resultArray.Length);
         }
+
+        const string tokenKey = "012345678901234567890123";
     }
 }
